@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title %}Profile{% endblock %}
+{% block content %}
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h2>User Profile</h2>
+            <form method="POST" action="{{ url_for('profile') }}">
+                <div class="mb-3">
+                    <label for="full_name" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="full_name" name="full_name" value="{{ profile.full_name or '' }}">
+                </div>
+                <div class="mb-3">
+                    <label for="date_of_birth" class="form-label">Date of Birth</label>
+                    <input type="date" class="form-control" id="date_of_birth" name="date_of_birth" value="{{ profile.date_of_birth.strftime('%Y-%m-%d') if profile.date_of_birth else '' }}">
+                </div>
+                <div class="mb-3">
+                    <label for="location" class="form-label">Location</label>
+                    <input type="text" class="form-control" id="location" name="location" value="{{ profile.location or '' }}">
+                </div>
+                <div class="mb-3">
+                    <label for="bio" class="form-label">Bio</label>
+                    <textarea class="form-control" id="bio" name="bio">{{ profile.bio or '' }}</textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="highest_level_of_education" class="form-label">Highest Level of Education</label>
+                    <input type="text" class="form-control" id="highest_level_of_education" name="highest_level_of_education" value="{{ profile.highest_level_of_education or '' }}">
+                </div>
+                <div class="mb-3">
+                    <label for="institution_name" class="form-label">Institution Name</label>
+                    <input type="text" class="form-control" id="institution_name" name="institution_name" value="{{ profile.institution_name or '' }}">
+                </div>
+                <div class="mb-3">
+                    <label for="major" class="form-label">Major/Field of Study</label>
+                    <input type="text" class="form-control" id="major" name="major" value="{{ profile.major or '' }}">
+                </div>
+                <div class="mb-3">
+                    <label for="graduation_year" class="form-label">Graduation Year</label>
+                    <input type="number" class="form-control" id="graduation_year" name="graduation_year" value="{{ profile.graduation_year or '' }}">
+                </div>
+                <button type="submit" class="btn btn-primary">Update Profile</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

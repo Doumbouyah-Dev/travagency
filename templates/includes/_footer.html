@@ -1,0 +1,70 @@
+<footer class="bg-light text-center py-3">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Services/Features</a>
+            </li>
+        </ul>
+    </nav>
+    <p>&copy; {{ now.year }} My Flask App. All rights reserved.</p>
+    <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+</footer>body {
+    font-family: sans-serif;
+    background-color: #f8f9fa; /* Light background */
+}
+
+.nav-link {
+    color: #007bff; /* Ocean blue for links */
+}
+
+.nav-link:hover {
+    color: #0056b3; /* Darker blue on hover */
+}
+
+.navbar {
+    background-color: #e3f2fd; /* Light blue navbar background */
+}
+
+.btn-primary {
+    background-color: #007bff; /* Ocean blue buttons */
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    border-color: #0056b3;
+}
+
+.footer {
+    background-color: #e3f2fd; /* Light blue footer background */
+    margin-top: 20px;
+}
+
+.footer a {
+    color: #007bff;
+    text-decoration: none;
+    padding: 0 10px;
+}
+
+.footer a:hover{
+    color:#0056b3;
+}
+
+.jumbotron{
+    background-color: white;
+    padding: 2rem 1rem;
+    border-radius: .3rem;
+}
+
+.container{
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,7 @@
+modules = ["python-base-3.13", "dotnet-7.0", "dotnet-8.0", "cpp-clang14", "nodejs-with-prybar-18"]
+run = "python app.py"
+[nix]
+channel = "stable-24_05"
+
+[deployment]
+run = ["sh", "-c", "python app.py"]
