@@ -13,7 +13,7 @@ login_manager = LoginManager(app)
 login_manager.login_view = 'signin'
 login_manager.login_message_category = 'info'
 
-from travency import routes
+from travency  import routes
 
 @login_manager.user_loader
 def load_user(user_id):

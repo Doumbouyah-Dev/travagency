@@ -1,6 +1,6 @@
 from flask import render_template, url_for, flash, redirect, request
-from my_flask_app import app, db
-from my_flask_app.models import User, Profile
+from travency  import app, db
+from travency.models import User, Profile
 from flask_login import login_user, current_user, logout_user, login_required
 from werkzeug.security import generate_password_hash
 
