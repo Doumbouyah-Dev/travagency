@@ -1,0 +1,26 @@
+{% extends 'base.html' %} {% block title %}Profile - YourAppName{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <h2 class="mb-4">Your Profile</h2>
+        <form method="POST" action="{{ url_for('main.profile') }}">
+            {{ form.hidden_tag() }}
+            <div class="mb-3">
+                {{ form.username.label(class="form-label") }} {{
+                form.username(class="form-control") }}
+            </div>
+            <div class="mb-3">
+                {{ form.email.label(class="form-label") }} {{
+                form.email(class="form-control") }}
+            </div>
+            <div class="mb-3">
+                {{ form.about_me.label(class="form-label") }} {{
+                form.about_me(class="form-control", rows=4) }}
+            </div>
+            <button type="submit" class="btn btn-primary">
+                Update Profile
+            </button>
+        </form>
+    </div>
+</div>
+{% endblock %}

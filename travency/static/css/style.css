@@ -2,6 +2,47 @@ body {
   font-family: sans-serif;
   background-color: #f8f9fa; /* Light background */
 }
+.bdcontainer{
+  padding: 0;
+  margin: 0;
+  
+}
+
+.navHeader{
+  color: #007bff;
+  font-weight: 900;
+  font-size: 2rem;
+}
+.diferent{
+  margin-right: 40px
+}
+#FpaddingClass{
+  padding: 0 25px 0 20px;
+  border-radius: 0px;
+
+}
+.Fnav{
+  margin-bottom: 0 0 0 0; !important
+}
+#paddingClass{
+  padding: 0 25px 0 20px;
+  border-radius: 0px;
+ 
+}
+.hero_image {
+  background-image: url(../images/hero_image.jpg);
+  background-size: cover;
+  background-position: center;
+  min-height: 70vh;
+  width: 100%;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
 
 .nav-link {
   color: #007bff; /* Ocean blue for links */
@@ -45,10 +86,11 @@ body {
   padding: 2rem 1rem;
   border-radius: .3rem;
 }
-
-.container{
-  background-color: white;
-  padding: 20px;
+.container {
+  background-color: #ec3636;
+  padding: 0px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  width: 100%;
 }
