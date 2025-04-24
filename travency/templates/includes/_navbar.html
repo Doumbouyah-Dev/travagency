@@ -1,3 +1,4 @@
+<!-- Updated _navbar.html with new links and profile icon -->
 <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
   <div class="container" id="paddingClass">
     <a class="navbar-brand navHeader" href="{{ url_for('main.index') }}"
@@ -19,28 +20,50 @@
         <li class="nav-item">
           <a class="nav-link" href="{{ url_for('main.index') }}">Home</a>
         </li>
+        <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ url_for('main.about') }}">About Us</a>
+          <a class="nav-link" href="#">Admission Flows</a>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('main.about') }}">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ url_for('main.visa_services') }}"
-            >Visa Services</a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ url_for('main.programs') }}">Programs</a>
-        </li>
-        <li class="nav-item diferent">
-          <a class="nav-link" href="{{ url_for('main.contact') }}"
-            >Contact Us</a
-          >
+          <a class="nav-link" href="{{ url_for('main.contact') }}">Contacts</a>
         </li>
         {% if current_user.is_authenticated %}
-        <li class="nav-item">
-          <a class="nav-link" href="{{ url_for('main.profile') }}">Profile</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ url_for('main.logout') }}">Logout</a>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="profileDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <img
+              src="{{ url_for('static', filename='uploads/' + current_user.username + '/profile.jpg') }}"
+              class="rounded-circle"
+              width="30"
+              height="30"
+              alt="Profile"
+            />
+          </a>
+          <ul
+            class="dropdown-menu dropdown-menu-end"
+            aria-labelledby="profileDropdown"
+          >
+            <li>
+              <a class="dropdown-item" href="{{ url_for('main.profile') }}"
+                >My Profile</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" href="{{ url_for('main.logout') }}"
+                >Logout</a
+              >
+            </li>
+          </ul>
         </li>
         {% else %}
         <li class="nav-item">
@@ -50,6 +73,11 @@
           <a class="nav-link" href="{{ url_for('main.signup') }}">Sign Up</a>
         </li>
         {% endif %}
+        <li class="nav-item">
+          <a class="nav-link btn btn-outline-primary px-3 ms-2" href="#"
+            >Donate</a
+          >
+        </li>
       </ul>
     </div>
   </div>

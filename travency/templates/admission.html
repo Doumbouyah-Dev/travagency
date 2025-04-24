@@ -1,0 +1,43 @@
+{% extends 'base.html' %} {% block title %}Admission Application - Travency{%
+endblock %} {% block content %}
+<div class="container">
+  <h2>Admission Processing Form</h2>
+  <form method="POST" enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+
+    <div class="mb-3">
+      {{ form.full_name.label }} {{ form.full_name(class="form-control") }}
+    </div>
+    <div class="mb-3">
+      {{ form.preferred_name.label }} {{
+      form.preferred_name(class="form-control") }}
+    </div>
+    <div class="mb-3">
+      {{ form.date_of_birth.label }} {{ form.date_of_birth(class="form-control")
+      }}
+    </div>
+    <div class="mb-3">
+      {{ form.gender.label }} {{ form.gender(class="form-control") }}
+    </div>
+    <div class="mb-3">
+      {{ form.phone.label }} {{ form.phone(class="form-control") }}
+    </div>
+    <div class="mb-3">
+      {{ form.email.label }} {{ form.email(class="form-control") }}
+    </div>
+
+    <div class="mb-3">
+      {{ form.essay.label }} {{ form.essay(class="form-control") }}
+    </div>
+    <div class="mb-3">
+      {{ form.transcript.label }} {{ form.transcript(class="form-control") }}
+    </div>
+    <div class="mb-3">
+      {{ form.recommendations.label }} {{
+      form.recommendations(class="form-control", multiple=True) }}
+    </div>
+
+    {{ form.submit(class="btn btn-success") }}
+  </form>
+</div>
+{% endblock %}

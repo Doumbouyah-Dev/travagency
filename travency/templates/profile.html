@@ -1,25 +1,60 @@
-{% extends 'base.html' %} {% block title %}Profile - YourAppName{% endblock %}
-{% block content %}
+{% extends 'base.html' %} {% block title %}Profile - Travency{% endblock %} {%
+block content %}
 <div class="row justify-content-center">
-    <div class="col-md-6">
+    <div class="col-md-8">
         <h2 class="mb-4">Your Profile</h2>
-        <form method="POST" action="{{ url_for('main.profile') }}">
+
+        <div class="text-center mb-4">
+            <img
+                src="{{ url_for('static', filename='uploads/' + user.username + '/' + user.profile_image) }}"
+                class="rounded-circle"
+                width="120"
+                height="120"
+                alt="Profile Image"
+            />
+        </div>
+
+        <form method="POST" enctype="multipart/form-data">
             {{ form.hidden_tag() }}
+            <div class="row">
+                <div class="mb-3 col-md-6">
+                    {{ form.first_name.label() }} {{
+                    form.first_name(class="form-control") }}
+                </div>
+                <div class="mb-3 col-md-6">
+                    {{ form.last_name.label() }} {{
+                    form.last_name(class="form-control") }}
+                </div>
+            </div>
+
             <div class="mb-3">
-                {{ form.username.label(class="form-label") }} {{
-                form.username(class="form-control") }}
+                {{ form.email.label() }} {{ form.email(class="form-control") }}
             </div>
             <div class="mb-3">
-                {{ form.email.label(class="form-label") }} {{
-                form.email(class="form-control") }}
+                {{ form.phone.label() }} {{ form.phone(class="form-control") }}
             </div>
             <div class="mb-3">
-                {{ form.about_me.label(class="form-label") }} {{
-                form.about_me(class="form-control", rows=4) }}
+                {{ form.preferred_country.label() }} {{
+                form.preferred_country(class="form-control") }}
             </div>
-            <button type="submit" class="btn btn-primary">
-                Update Profile
-            </button>
+            <div class="mb-3">
+                {{ form.preferred_field.label() }} {{
+                form.preferred_field(class="form-control") }}
+            </div>
+            <div class="mb-3">
+                {{ form.education_level.label() }} {{
+                form.education_level(class="form-control") }}
+            </div>
+            <div class="mb-3">
+                {{ form.about_me.label() }} {{
+                form.about_me(class="form-control", rows=3) }}
+            </div>
+            <div class="mb-3">
+                {{ form.profile_image.label() }} {{
+                form.profile_image(class="form-control") }}
+            </div>
+
+            {{ form.submit(class="btn btn-primary") }}
         </form>
     </div>
 </div>
